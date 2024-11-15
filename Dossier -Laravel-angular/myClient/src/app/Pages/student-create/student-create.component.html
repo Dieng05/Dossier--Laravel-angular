@@ -1,0 +1,108 @@
+
+<app-navbar></app-navbar>
+<div>
+    <div class="container mt-5 col-9">
+       <div class="card">
+          <div class="card-header">
+            <h4>Inscription Etudiant
+                <a routerLink="/Etudiants" class="btn btn-danger float-end">Back</a>
+            </h4>
+          </div>
+          <div class="card-body">
+
+             <div *ngIf="isLoading; else elseForm">
+               <app-loader [title]="LoadingTitle"></app-loader>
+
+             </div>
+             <ng-template #elseForm >
+              <form  (ngSubmit)="saveStudent()">
+                <div class="mb-3 col-12">
+
+                    <div class="row">
+                      <div class="mb-3 col-6">
+                        <label>code Etudiant</label>
+                        <input [(ngModel)]="etudiant.codeEtudiant" name="codeEtu" class="form-control"/>
+                        <span *ngIf="errors?.codeEtu" class="text-danger">{{errors?.codeEtu}}</span>
+                    </div>
+                     
+                        
+                        <input [(ngModel)]="etudiant.id" type="hidden" name="id" class="form-control"/>
+                        
+                      <div class="mb-3 col-6">
+                        <label>nom</label>
+                        <input [(ngModel)]="etudiant.nom" type="text" name="nom" class="form-control"/>
+                        <span *ngIf="errors?.nom" class="text-danger">{{errors?.nom}}</span>
+                      </div>
+                    </div>
+                </div> 
+                <div class="mb-3 col-12">        
+                <div class="row">
+                    <div class="mb-3 col-6">
+                      <label>prénom</label>
+                      <input  [(ngModel)]="etudiant.prenom"  type="text" name="prenom" class="form-control"/>
+                      <span *ngIf="errors?.prenom" class="text-danger">{{errors?.prenom}}</span>
+                    </div>
+                    <div class="mb-3 col-6">
+                      <label>ine</label>
+                      <input [(ngModel)]="etudiant.ine"  type="text" name="ine" class="form-control"/>
+                      <span *ngIf="errors?.ine" class="text-danger">{{errors?.ine}}</span>
+                    </div>
+                  </div>
+                </div> 
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Email Institutionnelle</label>
+                            <input [(ngModel)]="etudiant.email_ugb" type="email"  name="email_ugb" class="form-control"/>
+                            <span *ngIf="errors?.email_ugb" class="text-danger">{{errors?.email_ugb}}</span>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Date de Naissance</label>
+                            <input [(ngModel)]="etudiant.date_naiss_etu" type="date" name="date_naiss_etu" class="form-control"/>
+                            <span *ngIf="errors?.date_naiss_etu" class="text-danger">{{errors?.date_naiss_etu}}</span>
+                        </div>                         
+                    </div>
+                </div>
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Lieu de naissance</label>
+                            <input [(ngModel)]="etudiant.lieu_naiss_etu" type="text"  name="lieu_naiss_etu" class="form-control"/>
+                            <span *ngIf="errors?.lieu_naiss_etu" class="text-danger">{{errors?.lieu_naiss_etu}}</span>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Sexe</label>
+                            <select [(ngModel)]="etudiant.sexe" name="sexe" class="form-control">
+                              <option value="Masculin">Masculin</option>
+                              <option value="Féminin">Féminin</option>
+                            </select>
+                            <span *ngIf="errors?.sexe" class="text-danger">{{errors?.sexe}}</span>
+                        </div>                          
+                    </div>
+                </div>
+               
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Adresse</label>
+                            <input [(ngModel)]="etudiant.adresse_etu" type="text"  name="adresse_etu" class="form-control"/>
+                            <span *ngIf="errors.adresse_etu" class="text-danger">{{errors.adresse_etu}}</span>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Tel</label>
+                            <input [(ngModel)]="etudiant.telephone_etu" type="text"  name="telephone_etu" class="form-control"/>
+                            <span *ngIf="errors?.telephone_etu" class="text-danger">{{errors?.telephone_etu}}</span>
+                        </div>
+                    </div>
+                </div>
+              
+                
+                <div class="mb-3">
+                   <input type="submit" class="btn btn-primary" value="Enregistrez">
+                </div>
+              </form>
+            </ng-template>
+          </div>
+       </div>
+    </div>
+</div>

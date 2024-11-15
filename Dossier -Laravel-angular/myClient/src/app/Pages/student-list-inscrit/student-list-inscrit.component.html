@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div >
+    <div class="mt-5 container">
+        <div class="card">
+             <div class="card-header">
+
+                <h4>Listes des Etudiants Inscrit</h4>
+                
+                
+             </div>
+             <div class="card-body">
+                <table class="table table-striped table-bordered"> 
+                    <thead>
+                        <tr>
+                            <th>Code Etudiant</th>
+                            <th>Formation</th>
+                            <th>Niveau</th>
+                            <th>Année</th>
+                           
+                            
+                            <!--<th>Niveau</th>
+                            <th>Annee</th>--->
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr  *ngFor="let item of students">
+                            <td>{{item.etudiant_id}}</td>
+                            <td>{{item.formation?.libelle}}</td>
+                            <td>{{item.niveau?.libelle}}</td>
+                            <td>{{item.annee?.libelle}}</td>
+                            
+                            
+                          </tr>
+                          
+                    </tbody>
+                </table>
+
+             </div>
+        </div>
+

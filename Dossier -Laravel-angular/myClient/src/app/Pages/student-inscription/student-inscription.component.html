@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div>
+    <div class="container mt-5 col-5">
+       <div class="card">
+          <div class="card-header">
+            <h4>Inscription Etudiant
+                <a routerLink="/Etudiants" class="btn btn-danger float-end">Back</a>
+            </h4>
+          </div>
+          <div class="card-body">
+              <form (ngSubmit)="saveInscription()">
+                <div class="mb-3 col-12">
+                    
+                    <input type="hidden"  [(ngModel)]="id_etudiant" name="id"/>          
+                </div>  
+                <div class="mb-3 col-12">        
+                    <div class="row">                     
+                        <div class="mb-3 col-12">
+                            <label>Formation</label>
+                            <select [(ngModel)]="inscription.formation_id"  name="ufr" class="form-select">
+                                <option *ngFor="let itemF of formations" [value]="itemF.id">{{ itemF.libelle }} </option>
+                                
+                            </select>
+                          
+                        </div>  
+                        
+                                        
+                    </div>
+                </div>
+                
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-12">
+                            <label>Niveau Etude</label>
+                            <select  [(ngModel)]="inscription.niveau_id"  name="libelle_niveau" class="form-control">
+                              <option *ngFor="let itemN of niveaux" [value]="itemN.id">{{itemN.libelle}}</option>
+                            </select>
+                          
+                        </div>                                              
+                    </div>
+                </div>
+                <div class="mb-3 col-12">
+                    <div class="row">
+                      <div class="mb-3 col-12">
+                        <label>Année Début</label>
+                        <select [(ngModel)]="inscription.annee_id" name="annee_debut" class="form-control">
+                            <option *ngFor="let itemA of annees" [value]="itemA.id">{{itemA.libelle}}</option>
+                        </select>               
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                <div class="mb-3">
+                   <input type="submit" class="btn btn-primary" value="Enregistrez">
+                </div>
+              </form>
+          </div>
+       </div>
+    </div>
+</div>

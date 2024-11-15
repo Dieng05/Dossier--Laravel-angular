@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div >
+    <div class="mt-5 container col-8">
+        <div class="card">
+             <div class="card-header">
+
+                <h4>Informations</h4>
+                
+             </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-striped table-bordered"> 
+                                    <thead>
+                                        <tr>
+                                            <th>Libelle</th>
+                                            <th>Informations</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Première ligne -->
+                                        <tr>
+                                            <td><b>Code Etudiant</b></td>
+                                            <td>{{student.codeEtudiant}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>INE</b></td>
+                                            <td>{{student.ine}}</td>
+                                        </tr>
+                                        <!-- Deuxième ligne -->
+                                        <tr>
+                                            <td><b>Nom</b></td>
+                                            <td>{{student.nom}}</td>
+                                        </tr>
+                                
+                                        <!-- ... Répétez ceci pour les lignes 3 à 10 ... -->
+                                
+                                        <!-- Dixième ligne -->
+                                        <tr>
+                                            <td><b>Prénom</b></td>
+                                            <td>{{student.prenom}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Date de Naissance</b></td>
+                                            <td>{{student.date_naiss_etu}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Lieu de Naissance</b></td>
+                                            <td>{{student.lieu_naiss_etu}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Sexe</b></td>
+                                            <td>{{student.sexe}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Adresse</b></td>
+                                            <td>{{student.adresse_etu}}</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><b>Téléphone</b></td>
+                                            <td>{{student.telephone_etu}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Email</b></td>
+                                            <td>{{student.email_ugb}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    
+                                    <a [routerLink]="'/Update'" [queryParams]="{ id: student.id}" class="btn btn-success">Edit</a>
+                                    <a routerLink="/Etudiants" class="btn btn-secondary">Retour</a>
+
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+             </div>
+        </div>
+</div>
+
+

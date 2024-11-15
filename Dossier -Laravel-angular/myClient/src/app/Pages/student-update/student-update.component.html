@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+<div>
+    <div class="container mt-5 col-8">
+       <div class="card">
+          <div class="card-header">
+            <h4>Modifier Etudiant
+                <a routerLink="/Etudiants" class="btn btn-danger float-end">Back</a>
+            </h4>
+          </div>
+          <div class="card-body">
+              <form (ngSubmit)="UpdateStudents()">
+
+                <input [(ngModel)]="students.id" type="hidden" name="id" class="form-control"/>
+                <div class="mb-3 col-12">
+
+                    <div class="row">
+                      <div class="mb-3 col-6">
+                        <label>code Etudiant</label>
+                        <input [(ngModel)]="students.codeEtudiant"  name="codeEtu" class="form-control"/>
+                    
+                    </div>
+                        
+                      <div class="mb-3 col-6">
+                        <label>nom</label>
+                        <input [(ngModel)]="students.nom" type="text" name="nom" class="form-control"/>
+                       
+                      </div>
+                    </div>
+                </div> 
+                <div class="mb-3 col-12">        
+                <div class="row">
+                    <div class="mb-3 col-6">
+                      <label>prénom</label>
+                      <input [(ngModel)]="students.prenom"   type="text" name="prenom" class="form-control"/>
+                     
+                    </div>
+                    <div class="mb-3 col-6">
+                      <label>ine</label>
+                      <input [(ngModel)]="students.ine" type="text" name="ine" class="form-control"/>
+                    
+                    </div>
+                  </div>
+                </div> 
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Email Institutionnelle</label>
+                            <input [(ngModel)]="students.email_ugb"  type="email"  name="email_ugb" class="form-control"/>
+                           
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Date de Naissance</label>
+                            <input [(ngModel)]="students.date_naiss_etu" type="date" name="date_naiss_etu" class="form-control"/>
+                        
+                        </div>                         
+                    </div>
+                </div>
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Lieu de naissance</label>
+                            <input [(ngModel)]="students.lieu_naiss_etu" type="text"  name="lieu_naiss_etu" class="form-control"/>
+                            
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Sexe</label>
+                            <select [(ngModel)]="students.sexe" name="sexe" class="form-control">
+                                <option [value]="students.sexe">{{ students.sexe }}</option>
+                                <option value="Masculin">Masculin</option>
+                                <option value="Féminin">Féminin</option>
+
+                              </select>
+                              
+                        </div>                          
+                    </div>
+                </div>
+                <div class="mb-3 col-12">        
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label>Adresse</label>
+                            <input [(ngModel)]="students.adresse_etu" type="text"  name="adresse_etu" class="form-control"/>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label>Tel</label>
+                            <input [(ngModel)]="students.telephone_etu"  type="text"  name="telephone_etu" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                         <div class="mb-3">
+                   <button type="submit"  class="btn btn-primary" value="">Enregistrez</button>
+                   <button type="reset" [routerLink]="'/Etudiants'" class="btn btn-danger">Annuler</button>
+                </div>
+              </form>
+          </div>
+       </div>
+    </div>
+</div>
